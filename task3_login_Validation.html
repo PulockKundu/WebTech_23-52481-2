@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<head>
+<style>
+    .header {
+    display: flex;                    
+    justify-content: space-between;    
+    align-items: center;               
+    padding: 20px;                    
+}
+.inner-box {
+            width: 70%;
+            height: 260px;
+            
+            background-color: white;
+            margin-top: 20px;
+            border: 1px solid black;
+            padding: 20px;
+            box-sizing: border-box;
+            
+        }
+
+
+</style>
+<script>
+        function handleSubmit() {
+            const NameValue = document.getElementById("username").value;
+           
+            const passwordValue = document.getElementById("password").value;
+            if (!NameValue || NameValue == "") {
+                const ErrorElement = document.getElementById("nameErr");
+                ErrorElement.innerHTML = "Name is required";
+            } else {
+                const ErrorElement = document.getElementById("nameErr");
+                ErrorElement.innerHTML = "";
+            }
+            
+            if (!passwordValue || passwordValue == "") {
+                const ErrorElement = document.getElementById("passwordErr");
+                ErrorElement.innerHTML = "Password is required";
+            } else {
+                const ErrorElement = document.getElementById("passwordErr");
+                ErrorElement.innerHTML = "";
+            }
+        }
+    </script>
+</head>
+<body>
+    <table border="1" cellpadding="20" cellspacing="0" align="center" width="900">
+         <tr>
+            <td>
+                <div class="header">
+                    <p><span style="color: green;font-size: 40px;">X</span>Company</p>
+                    <div>
+                        <a href="#">Home</a> |
+                        <a href="#">Login</a> |
+                        <a href="#">Registration</a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            
+            <td style="height: 400px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+              <h2 style="margin-bottom: 10px;">Login</h2>
+                
+                <div class="inner-box">
+                    
+                   
+                    <label for="username" style="display: inline-block; width: 100px;"><b>Username:</b></label>
+                    <input type="text" id="username" name="username" style="padding: 8px; width: 60%;">
+                    <p id="nameErr" style="color:red"></p>
+
+                    <label for="password" style="display: inline-block; width: 100px;"><b>Password:</b></label>
+                    <input type="text" id="password" name="password" style="padding: 8px; width: 60%;">
+                   <p id="passwordErr" style="color:red"></p>
+                    <!-- Remember me -->
+                     <hr style="margin-top: 15px; margin-bottom: 10px;">
+
+              <div style="margin-top: 10px;">
+               <input type="checkbox" id="remember" name="remember">
+              <label for="remember">Remember Me</label>
+               </div>
+
+                
+                 <div style="margin-top: 10px; padding-bottom: 50px;">
+                 <!-- <input type="submit" value="Submit" style="padding: 5px 10px;"> -->
+                 <button onclick="handleSubmit()">Submit</button>
+                 <a href="#" style="margin-left: 10px;">Forgot Password?</a>
+                </div>
+
+
+                    
+        </div>
+
+        </td>
+        </tr>
+
+            </td>
+        </tr>
+        <tr >
+            <td style="height: 5px;text-align:center;font-size: 10px;">
+                <h1>Copyright @ 2017</h1>
+
+            </td>
+        </tr>
+    </table>
+
+
+</body>
