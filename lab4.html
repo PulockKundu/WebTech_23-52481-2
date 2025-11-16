@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Product Display Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #686363;
+            width: 100%;
+            height: 100vh; 
+            overflow-x: hidden; 
+        }
+
+        h1 {
+            text-align: center;
+            padding: 15px;
+            background-color: #6e7b4a;
+            color: white;
+        }
+
+        .section {
+            text-align: center;
+            margin: 20px auto;
+            width: 95%; 
+        }
+
+        .section-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .product-box {
+            display: inline-block;
+            width: 300px;
+            height: 300px;
+            border: 1px solid #ccc;
+            background-color: white;
+            padding: 15px;
+            margin: 10px;
+            text-align: center;
+            vertical-align: top;
+            transition: outline 0.3s ease, outline-offset 0.3s ease;
+        }
+
+        .product-box:hover {
+            outline: 2px solid #007bff;
+            outline-offset: 4px;
+        }
+
+        .product-box img {
+            width: 80px;
+            height: 80px;
+            
+            margin-bottom: 10px;
+        }
+
+        .product-name {
+            font-weight: bold;
+            margin: 8px 0;
+        }
+
+        .product-price {
+            color: green;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        .buy-link {
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+            padding: 6px 12px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        .buy-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Gadget Store</h1>
+<div class="section">
+    <div class="section-title"><h2>Laptop</h2></div>
+    <div class="product-box">
+        <img src="image/laptop1.jpg" alt="laptop 1">
+        <div class="product-name">MSI modern 15 </div>
+        <p>Professional laptop with all nedded ports.</p>
+        <div class="product-price">$249.99</div>
+        <a href="#" class="buy-link">Buy Now</a>
+    </div>
+
+    <div class="product-box">
+        <img src="image/laptop2.png" alt="laptop2">
+        <div class="product-name">Boat air 1</div>
+        <p>Powerful charging backup with thin body.</p>
+        <div class="product-price">$179.99</div>
+        <a href="#" class="buy-link">Buy Now</a>
+    </div>
+
+    <div class="product-box">
+        <img src="image/l3.jpg" alt="laptop3">
+        <div class="product-name">HP pro 1</div>
+        <p>Perfect for stufent and office going.</p>
+        <div class="product-price">$159.99</div>
+        <a href="#" class="buy-link">Buy Now</a>
+    </div>
+</div>
+
+
+
+<!-- SECTION 2 -->
+<div class="section">
+    <div class="section-title"><h2>Headphone</h2></div>
+    <div class="product-box">
+        <img src="image/h1.jpg" alt="Headphone 1">
+        <div class="product-name">Plexton 1</div>
+        <p>Great sound quality, ideal for online classes and daily office work.</p>
+        <div class="product-price">$29.99</div>
+        <a href="#" class="buy-link">Buy Now</a>
+    </div>
+
+    <div class="product-box">
+        <img src="image/h2.jpg" alt="Headphone 2">
+        <div class="product-name">Boat air 1</div>
+        <p>Lightweight and durable—perfect choice for study and professional use.</p>
+        <div class="product-price">$19.99</div>
+        <a href="#" class="buy-link">Buy Now</a>
+    </div>
+
+    <div class="product-box">
+        <img src="image/h3.jpg" alt="Headphone 3">
+        <div class="product-name">Airpod pro</div>
+        <p>Perfect for students and office-goers, very comfortable for long use.</p>
+        <div class="product-price">$15.99</div>
+        <a href="#" class="buy-link">Buy Now</a>
+    </div>
+</div>
+
+<!-- SECTION 3 -->
+<div class="section">
+    <div class="section-title">
+       <h2>Smartwatch</h2>
+    </div>
+    
+    <div class="product-box">
+        <img src="image/s1.jpg" alt="Smartwatch 1">
+        <div class="product-name">Xiaomi 3i</div>
+        <p>Perfect for students and office people who want to track health and time easily.</p>
+        <div class="product-price">$89.99</div>
+        <a href="#" class="buy-link">Buy Now</a>
+    </div>
+
+    <div class="product-box">
+        <img src="image/s2.png" alt="Smartwatch 2">
+        <div class="product-name">Samsung 12oh</div>
+        <p>Very useful for daily routines—notifications, fitness tracking, and more.</p>
+        <div class="product-price">$95.99</div>
+        <a href="#" class="buy-link">Buy Now</a>
+    </div>
+
+    <div class="product-box">
+        <img src="image/s3.jpg" alt="Smartwatch 3">
+        <div class="product-name">Band Watch</div>
+        <p>Stylish and smart, ideal for both college and office environments.</p>
+        <div class="product-price">$85.99</div>
+        <a href="#" class="buy-link">Buy Now</a>
+    </div>
+</div>
+
+</body>
+</html>
