@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<head>
+    <script>
+
+        let totalRegistrants = 0;
+          let virtualCount = 0;
+        let inPersonCount = 0;
+
+         function handleSubmit() {
+            const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+      const company = document.getElementById("company").value;
+       
+        let valid = true;
+        if (name == "" || !name) {
+          const nameErr = document.getElementById("nameErr");
+          nameErr.innerHTML = "name cannot be empty";
+          valid = false;
+        } else {
+          const nameErr = document.getElementById("nameErr");
+          nameErr.innerHTML = "";
+          
+       
+
+          if (name.length < 6) {
+            const nameErr = document.getElementById("nameErr");
+            nameErr.innerHTML =
+              " name must be at least 6 characters long";
+            valid = false;
+          }
+          if (name.length > 100 && name !== "") {
+            const nameErr = document.getElementById("nameErr");
+            nameErr.innerHTML = " name cannot exceed 100 characters";
+            valid = false;
+          }
+        }
+        if (email == "" || !email) {
+          const emailErr = document.getElementById("emailErr");
+          emailErr.innerHTML = "Email cannot be empty";
+          valid = false;
+        } else {
+          const emailErr = document.getElementById("emailErr");
+          emailErr.innerHTML = "";
+          
+
+         
+          const emailPattern =
+            /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+          if (!emailPattern.test(email)) {
+            const emailErr = document.getElementById("emailErr");
+            emailErr.innerHTML = "Please enter a valid email address";
+            valid = false;
+          }
+        }
+    if (company.length > 100 ) {
+        const companyErr = document.getElementById("companyErr");
+        companyErr.innerHTML = " company name cannot exceed 100 characters";
+      valid = false;
+         }
+     else {
+       document.getElementById("companyErr").innerHTML = "";
+      }
+
+const attendance = document.querySelector('input[name="attendance"]:checked');
+
+
+if (!attendance) {
+    const attendanceErr = document.getElementById("attendanceErr");
+    attendanceErr.innerHTML = "Please select an attendance type";
+    valid = false;
+} else {
+    attendanceErr.innerHTML = "";
+}
+         if (valid) {
+         totalRegistrants++;
+
+        if (attendance.value === "Virtual") {
+         virtualCount++;
+        } else if (attendance.value === "In-Person") {
+        inPersonCount++;
+          }
+        }
+            
+        }
+
+      function toggleAnalytics() {
+            const panel = document.getElementById("analyticsPanel");
+            const btn = document.getElementById("analyticsBtn");
+
+            if (panel.style.display === "none") {
+             panel.style.display = "block";
+             btn.innerHTML = "Hide Event Analytics";
+                document.getElementById("totalReg").innerHTML = totalRegistrants;
+             document.getElementById("virtualReg").innerHTML = virtualCount;
+                document.getElementById("inPersonReg").innerHTML = inPersonCount;
+
+            } else {
+                panel.style.display = "none";
+                  btn.innerHTML = "Show Event Analytics";
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <div>
+         <label for="username" style="display: inline-block; width: 100px;"><b>Username:</b></label>
+                    <input type="text" id="name" name="name" style="padding: 8px; width: 60%;width: 500px;">
+                    <p id="nameErr" style="color:red"></p>
+
+                    <label for="email" style="display: inline-block; width: 100px;"><b>email:</b></label>
+                    <input type="email" id="email" name="email" style="padding: 8px; width: 60%; width: 500px;">
+                   <p id="emailErr" style="color:red"></p>
+
+                    <label for="company">Company Name</label>
+                   <input type="text" id="company" style="width: 500px;height: 30px;">
+                    <p id="companyErr" style="color:red"></p>
+
+            <div>
+            <label>Attendance Type</label>
+            <input type="radio" name="attendance" value="Virtual"> Virtual
+            <input type="radio" name="attendance" value="In-Person"> In-Person
+            <p id="attendanceErr" style="color:red"></p>
+
+                    </div>
+
+    </div>
+
+    <button onclick="handleSubmit()">Submit</button>
+    <br> <br>
+
+    <button id="analyticsBtn" onclick="toggleAnalytics()">Show Event Analytics</button>
+    <div id="analyticsPanel" style="display:none; margin-top: 20px; padding:10px; border:1px solid #ccc;">
+    <h3>Event Analytics</h3>
+    <p><b>Total Registrants:</b> <span id="totalReg">0</span></p>
+    <p><b>Virtual Attendance:</b> <span id="virtualReg">0</span></p>
+        <p><b>In-Person Attendance:</b> <span id="inPersonReg">0</span></p>
+     </div>
+
+</body>
+</html>
